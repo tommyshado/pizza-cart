@@ -1,0 +1,49 @@
+body {
+    background-color: #264653;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* avoid repetition by creating a class */
+
+.pizza_class {
+    /* box model */
+    border: 1px solid #E9C46A;
+    /* padding creates spaces around the edges */
+    padding: 1em;
+    margin: 1em;
+    margin-bottom: 2em;
+    margin-left: 0em;
+    /* you can the borders round */
+    border-radius: 1,5em;
+    /* use inline block */
+}
+
+.medium-pizza {
+    background-color: #2A9D8F;
+    flex: 1;
+}
+
+.large-pizza {
+    background-color: #E76F51;
+    flex: 1;
+}
+
+.small-pizza {
+    background-color: #F4A261;
+    flex: 1;
+}
+
+.contact-us {
+    background-color: #E9C46A;
+}
+
+/* making the web page responsive */
+/* the way that I think of this is as an if else statement */
+@media (min-width:760px) {
+    /* .body {
+        background-color:#E9C46A;
+    } */
+    .pizza_container {
+        display: flex;
+    }
+}
