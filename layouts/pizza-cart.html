@@ -6,6 +6,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Document</title>
 
+        <link rel="stylesheet" href="../style-sheets/style.css">
+
         <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
     </head>
@@ -14,64 +16,149 @@
         
         <div class="sections">
 
-            <header>
-                <h1 class="inlineDisplay">Pizza Cart Payment Page</h1>
-
-                <div>
-                    <a href="index.html"><img src="../public/home.png" alt="home.png" width="40px"></a>
-                </div>
-            </header>
-
-            <div class="section">
-                <div x-data="pizzaCart">
-
+            <div class="pizzaCartSection">
+                <header>
+                    <h1 class="inlineDisplay">Pizza Cart Payment Page</h1>
+    
                     <div>
-                        <strong><label for="">Small Pizza</label></strong>
-
-                        <!-- add to cart anchor element -->
-                        <a @click="addPizzaToCart('small')" href="#"><img src="../public/add.png" alt="" width="30px"></a>
-                        <!-- remove pizza from cart anchor element -->
-                        <a @click="removePizzaFromCart('small')" href="#"><img src="../public/minus.png" alt="" width="30px"></a>
-
-                        <!-- small pizza total element -->
-                        <strong><span x-text="smallPizzaTotal"></span></strong>
+                        <a href="index.html"><img src="../public/home.png" alt="home.png" width="40px"></a>
                     </div>
+                </header>
+    
+                <div class="section">
+                    <div x-data="pizzaCart">
+    
+                        <div>
 
-                    <div>
-                        <strong><label for="">Medium Pizza</label></strong>
+                            <!-- small pizza elements -->
 
-                        <!-- add to cart anchor element -->
-                        <a @click="addPizzaToCart('medium')" href="#"><img src="../public/add.png" alt="" width="30px"></a>
-                        <!-- remove pizza from cart anchor element -->
-                        <a @click="removePizzaFromCart('medium')" href="#"><img src="../public/minus.png" alt="" width="30px"></a>
+                            <strong><label for="">Small Pizza</label></strong>
+    
+                            <!-- add to cart anchor element -->
+                            <a @click="addPizzaToCart('small')" href="#"><img src="../public/add.png" alt="" width="30px"></a>
+                            <!-- remove pizza from cart anchor element -->
+                            <a @click="removePizzaFromCart('small')" href="#"><img src="../public/minus.png" alt="" width="30px"></a>
+    
+                            <!-- small pizza total element -->
+                            <strong><span x-text="smallPizzaTotal"></span></strong>
+                        </div>
 
-                        <!-- medium pizza total element -->
-                        <strong><span x-text="mediumPizzaTotal"></span></strong>
+                        <!-- medium pizza elements -->
+    
+                        <div>
+                            <strong><label for="">Medium Pizza</label></strong>
+    
+                            <!-- add to cart anchor element -->
+                            <a @click="addPizzaToCart('medium')" href="#"><img src="../public/add.png" alt="" width="30px"></a>
+                            <!-- remove pizza from cart anchor element -->
+                            <a @click="removePizzaFromCart('medium')" href="#"><img src="../public/minus.png" alt="" width="30px"></a>
+    
+                            <!-- medium pizza total element -->
+                            <strong><span x-text="mediumPizzaTotal"></span></strong>
+                        </div>
+    
+
+                        <!-- large medium -->
+
+                        <div>
+                            <strong><label for="">Large Pizza</label></strong>
+    
+                            <!-- add to cart anchor element -->
+                            <a @click="addPizzaToCart('large')" href="#"><img src="../public/add.png" alt="" width="30px"></a>
+                            <!-- remove pizza from cart anchor element -->
+                            <a @click="removePizzaFromCart('large')" href="#"><img src="../public/minus.png" alt="" width="30px"></a>
+    
+                            <!-- large pizza element -->
+                            <strong><span x-text="largePizzaTotal"></span></strong>
+                        </div>
+
+                        <!-- total element -->
+    
+                        <div>
+    
+                            <!-- elements for the overall total for small, medium and large pizza -->
+                            <strong><label for="">Total</label></strong>
+                            <strong><span x-text="totalForPizza"></span></strong>
+                        </div>
+
+                        <!-- checkout button element -->
+
+
+
+    
+                        <!-- this is a pizza container -->
+            
+                        <div class="pizza_container">
+                            <!-- container -->
+                            <!-- now add the class -->
+                            <div class="pizza_class medium-pizza">
+                                
+                                <h2>Medium Pizza</h2>
+                                <img src="../public/pizza.png" width="100">
+                                <h3>R89.00</h3>
+            
+                                <div>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                </div>
+            
+                                <div>
+                                    <!-- <strong><label for="">Stock Available:<span x-text="pizzasInStock('medium')" ></span></label></strong> -->
+                                </div>
+            
+                                <strong><button @click="setBuyToTrue('medium')">BUY</button></strong>
+            
+                            </div>
+            
+                            <div class="pizza_class large-pizza">
+                                <h3>Large Pizza</h3>
+                                <img src="../public/pizza.png" width="200">
+                                <h3>R129.00</h3>
+            
+                                <div>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                </div>
+            
+                                <div>
+                                    <!-- <strong><label for="">Stock Available:<span x-text="pizzasInStock('large')" ></span></label></strong> -->
+                                </div>
+            
+                                <strong><button @click="setBuyToTrue('large')">BUY</button></strong>
+            
+                            </div>
+            
+                            <div class="pizza_class small-pizza">
+                                <h4>Small Pizza</h4>
+                                <img src="../public/pizza.png" width="250">
+                                <h3>R49.00</h3>
+            
+                                <div>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                </div>
+            
+                                <div>
+                                    <!-- <strong><label for="">Stock Available:<span x-text="pizzasInStock('small')" ></span></label></strong> -->
+                                </div>
+            
+                                <strong><button @click="setBuyToTrue('small')">BUY</button></strong>
+                        
+                            </div>
+                        </div>
+                    
+                    
+                        <div class="pizza_class contact-us">
+                            <h5>Contact Details</h5>
+                            <div>Contact us at: 021 340 1231 info@PerfectPizza.co.za</div>
+                        </div>
+                        
                     </div>
-
-                    <div>
-                        <strong><label for="">Large Pizza</label></strong>
-
-                        <!-- add to cart anchor element -->
-                        <a @click="addPizzaToCart('large')" href="#"><img src="../public/add.png" alt="" width="30px"></a>
-                        <!-- remove pizza from cart anchor element -->
-                        <a @click="removePizzaFromCart('large')" href="#"><img src="../public/minus.png" alt="" width="30px"></a>
-
-                        <!-- large pizza element -->
-                        <strong><span x-text="largePizzaTotal"></span></strong>
                     </div>
-
-                    <div>
-
-                        <!-- elements for the overall total for small, medium and large pizza -->
-                        <strong><label for="">Total</label></strong>
-                        <strong><span x-text="totalForPizza"></span></strong>
-                    </div>
-
                 </div>
             </div>
-            
-        </div>
+
+
     </body>
 
     <script src="../app/pizza-cart.app.js"></script>
