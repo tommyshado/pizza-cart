@@ -44,17 +44,18 @@ function pizzaCart() {
                     this.totals[pizzaSize] = this.counter[pizzaSize] * this.price[pizzaSize];
 
                     // set the pizza totals into the overall totals
-                    this.totals.overallTotal += this.totals[pizzaSize];
+                    this.totals.overallTotal = this.totals[pizzaSize];
                 };
             };
         },
 
         // method to remove a pizza from the cart
         removeFromCart(pizzaSize) {
-            if (this.totals.overallTotal > this.totals[pizzaSize]) {
+            if (this.totals.overallTotal > 0) {
                 this.counter[pizzaSize]--;
+                this.totals[pizzaSize] = this.counter[pizzaSize] * this.price[pizzaSize];
                 // set the pizza totals into the overall totals
-                this.totals.overallTotal -= this.totals[pizzaSize];
+                this.totals.overallTotal = this.totals[pizzaSize];
 
                 // increment the stock
                 this.pizzaAvailable[pizzaSize]++;
