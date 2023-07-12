@@ -40,6 +40,13 @@ body {
     flex: 1;
 }
 
+.buttons {
+    padding: 1em;
+	border-radius: 0.5em;
+	font-size: 1em;
+	font-weight: bold;
+}
+
 .contact-us {
     background-color: #c8553d;
 }

@@ -35,12 +35,15 @@
                             <strong><label for="">Small Pizza</label></strong>
     
                             <!-- add to cart anchor element -->
-                            <a @click="addPizzaToCart('small')" href="#"><img src="../public/add.png" alt="" width="30px"></a>
+                            <a @click="addToCart('small')" href="#"><img src="../public/add.png" alt="" width="30px"></a>
+                            <!-- counter element -->
+                            <strong><span x-text="counter.small"></span></strong>
+
                             <!-- remove pizza from cart anchor element -->
-                            <a @click="removePizzaFromCart('small')" href="#"><img src="../public/minus.png" alt="" width="30px"></a>
+                            <a @click="removeFromCart('small')" href="#"><img src="../public/minus.png" alt="" width="30px"></a>
     
                             <!-- small pizza total element -->
-                            <strong><span x-text="smallPizzaTotal"></span></strong>
+                            <strong><span x-text="totals.small"></span></strong>
                         </div>
 
                         <!-- medium pizza elements -->
@@ -49,12 +52,15 @@
                             <strong><label for="">Medium Pizza</label></strong>
     
                             <!-- add to cart anchor element -->
-                            <a @click="addPizzaToCart('medium')" href="#"><img src="../public/add.png" alt="" width="30px"></a>
+                            <a @click="addToCart('medium')" href="#"><img src="../public/add.png" alt="" width="30px"></a>
+                            <!-- counter element -->
+                            <strong><span x-text="counter.medium"></span></strong>
+
                             <!-- remove pizza from cart anchor element -->
-                            <a @click="removePizzaFromCart('medium')" href="#"><img src="../public/minus.png" alt="" width="30px"></a>
+                            <a @click="removeFromCart('medium')" href="#"><img src="../public/minus.png" alt="" width="30px"></a>
     
                             <!-- medium pizza total element -->
-                            <strong><span x-text="mediumPizzaTotal"></span></strong>
+                            <strong><span x-text="totals.medium"></span></strong>
                         </div>
     
 
@@ -64,12 +70,15 @@
                             <strong><label for="">Large Pizza</label></strong>
     
                             <!-- add to cart anchor element -->
-                            <a @click="addPizzaToCart('large')" href="#"><img src="../public/add.png" alt="" width="30px"></a>
+                            <a @click="addToCart('large')" href="#"><img src="../public/add.png" alt="" width="30px"></a>
+                            <!-- counter element -->
+                            <strong><span x-text="counter.large"></span></strong>
+
                             <!-- remove pizza from cart anchor element -->
-                            <a @click="removePizzaFromCart('large')" href="#"><img src="../public/minus.png" alt="" width="30px"></a>
+                            <a @click="removeFromCart('large')" href="#"><img src="../public/minus.png" alt="" width="30px"></a>
     
                             <!-- large pizza element -->
-                            <strong><span x-text="largePizzaTotal"></span></strong>
+                            <strong><span x-text="totals.large"></span></strong>
                         </div>
 
                         <!-- total element -->
@@ -78,7 +87,7 @@
     
                             <!-- elements for the overall total for small, medium and large pizza -->
                             <strong><label for="">Total</label></strong>
-                            <strong><span x-text="totalForPizza"></span></strong>
+                            <strong><span x-text="totals.overallTotal"></span></strong>
                         </div>
 
                         <!-- checkout button element -->
@@ -106,7 +115,7 @@
                                     <!-- <strong><label for="">Stock Available:<span x-text="pizzasInStock('medium')" ></span></label></strong> -->
                                 </div>
             
-                                <strong><button @click="setBuyToTrue('medium')">BUY</button></strong>
+                                <strong><button class="buttons" @click="pizzaBought('medium')">BUY</button></strong>
             
                             </div>
             
@@ -124,7 +133,7 @@
                                     <!-- <strong><label for="">Stock Available:<span x-text="pizzasInStock('large')" ></span></label></strong> -->
                                 </div>
             
-                                <strong><button @click="setBuyToTrue('large')">BUY</button></strong>
+                                <strong><button class="buttons" @click="pizzaBought('large')">BUY</button></strong>
             
                             </div>
             
@@ -142,7 +151,7 @@
                                     <!-- <strong><label for="">Stock Available:<span x-text="pizzasInStock('small')" ></span></label></strong> -->
                                 </div>
             
-                                <strong><button @click="setBuyToTrue('small')">BUY</button></strong>
+                                <strong><button class="buttons" @click="pizzaBought('small')">BUY</button></strong>
                         
                             </div>
                         </div>
