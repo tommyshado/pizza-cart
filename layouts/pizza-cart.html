@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+
+        <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    </head>
+    
+    <body>
+        
+        <div class="sections">
+            <h1 class="inlineDisplay">Pizza Cart Payment Page</h1>
+
+            <div class="section">
+                <div x-data="pizzaCart">
+
+                    <div>
+                        <strong><label for="">Small Pizza</label></strong>
+
+                        <!-- add to cart anchor element -->
+                        <a @click="addPizzaToCart('small')" href="#"><img src="../public/add.png" alt="" width="30px"></a>
+                        <!-- remove pizza from cart anchor element -->
+                        <a @click="removePizzaFromCart('small')" href="#"><img src="../public/minus.png" alt="" width="30px"></a>
+
+                        <!-- small pizza total element -->
+                        <strong><span x-text="smallPizzaTotal"></span></strong>
+                    </div>
+
+                    <div>
+                        <strong><label for="">Medium Pizza</label></strong>
+
+                        <!-- add to cart anchor element -->
+                        <a @click="addPizzaToCart('medium')" href="#"><img src="../public/add.png" alt="" width="30px"></a>
+                        <!-- remove pizza from cart anchor element -->
+                        <a @click="removePizzaFromCart('medium')" href="#"><img src="../public/minus.png" alt="" width="30px"></a>
+
+                        <!-- medium pizza total element -->
+                        <strong><span x-text="mediumPizzaTotal"></span></strong>
+                    </div>
+
+                    <div>
+                        <strong><label for="">Large Pizza</label></strong>
+
+                        <!-- add to cart anchor element -->
+                        <a @click="addPizzaToCart('large')" href="#"><img src="../public/add.png" alt="" width="30px"></a>
+                        <!-- remove pizza from cart anchor element -->
+                        <a @click="removePizzaFromCart('large')" href="#"><img src="../public/minus.png" alt="" width="30px"></a>
+
+                        <!-- large pizza element -->
+                        <strong><span x-text="largePizzaTotal"></span></strong>
+                    </div>
+
+                    <div>
+
+                        <!-- elements for the overall total for small, medium and large pizza -->
+                        <strong><label for="">Total</label></strong>
+                        <strong><span x-text="totalForPizza"></span></strong>
+                    </div>
+
+                </div>
+            </div>
+            
+        </div>
+    </body>
+
+    <script src="../app/pizza-cart.app.js"></script>
+    <script src="../app/pizza-cart.dom.js"></script>
+
+</html>
