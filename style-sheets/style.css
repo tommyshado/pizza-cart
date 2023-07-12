@@ -1,5 +1,5 @@
 body {
-    background-color: #264653;
+    background-color: #ffffff;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
@@ -7,7 +7,7 @@ body {
 
 .pizza_class {
     /* box model */
-    border: 1px solid #E9C46A;
+    border: 1px solid #4f5d75;
     /* padding creates spaces around the edges */
     padding: 1em;
     margin: 1em;
@@ -18,23 +18,30 @@ body {
     /* use inline block */
 }
 
+
+/* header and anchor element styling */
+.inlineDisplay {
+    display: inline;
+}
+
+/* body of the page styling */
 .medium-pizza {
-    background-color: #2A9D8F;
+    background-color: #588b8b;
     flex: 1;
 }
 
 .large-pizza {
-    background-color: #E76F51;
+    background-color: #588b8b;
     flex: 1;
 }
 
 .small-pizza {
-    background-color: #F4A261;
+    background-color: #588b8b;
     flex: 1;
 }
 
 .contact-us {
-    background-color: #E9C46A;
+    background-color: #c8553d;
 }
 
 /* making the web page responsive */
