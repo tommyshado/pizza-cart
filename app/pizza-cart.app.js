@@ -83,8 +83,11 @@ function pizzaCart() {
 
             // increment the counter property for the first time then...
             this.counter[pizzaSize]++;
-            // decrement the in-stock property
+            // decrement the in-stock property and...
             this.pizzaAvailable[pizzaSize]--;
+
+            // totals
+            this.totals[pizzaSize] += this.price[pizzaSize];
         },
 
         get showCheckOutBtn() {
