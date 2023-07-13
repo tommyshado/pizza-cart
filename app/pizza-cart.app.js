@@ -33,6 +33,13 @@ function pizzaCart() {
             large: 15,
         },
 
+        checkOut: false,
+
+        pay: {
+            successful: "",
+            "not-succesfull": "",
+        },
+
         // method to add a pizza to the cart
         addToCart(pizzaSize) {
             if (this.bought[pizzaSize] === true) {
@@ -45,6 +52,9 @@ function pizzaCart() {
 
                     // set the pizza totals into the overall totals
                     this.totals.overallTotal = this.totals[pizzaSize];
+
+                    // invoke the function to enable the button for checking out
+                    this.showCheckOutBtn();
                 };
             };
         },
@@ -65,6 +75,36 @@ function pizzaCart() {
         // method to set the bought property given a pizza size to true
         pizzaBought(pizzaSize) {
             this.bought[pizzaSize] = true;
+        },
+
+        showCheckOutBtn() {
+            if (this.counter.small > 0 || this.counter.medium > 0 || this.counter.large > 0) {
+                // set the checkout property to true
+                this.checkOut = true;
+            };
+        },
+
+        payment(userPayment) {
+
+            if 
+            (
+                userPayment === this.price.small || 
+                userPayment === this.price.medium || 
+                userPayment === this.price.large
+            ) 
+            {
+                // enough payment
+                this.pay.successful = "Enjoy your pizza.";
+            } else if 
+            (
+                userPayment < this.price.small || 
+                userPayment < this.price.medium || 
+                userPayment < this.price.large
+            )  
+            {
+                // not enough payment
+                this.pay["not-succesfull"] = "Sorry - that is not enough money!";
+            }
         },
     };
 };
