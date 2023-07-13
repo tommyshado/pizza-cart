@@ -19,10 +19,18 @@ body {
 }
 
 
-/* header and anchor element styling */
+/* header and anchor element styling of pizza cart */
 .inlineDisplay {
     display: inline;
 }
+
+.pizza {
+    text-align: center;
+}
+
+/* .pizzaCartLabel { */
+    /* code here */
+/* } */
 
 /* body of the page styling */
 .medium-pizza {

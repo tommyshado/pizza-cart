@@ -33,7 +33,7 @@ function pizzaCart() {
             large: 15,
         },
 
-        checkOut: false,
+        // checkOut: false,
 
         pay: {
             successful: "",
@@ -51,11 +51,8 @@ function pizzaCart() {
                     this.counter[pizzaSize]++;
                     this.totals[pizzaSize] = this.counter[pizzaSize] * this.price[pizzaSize];
 
-                    // set the pizza totals into the overall totals
-                    this.totals.overallTotal = this.totals[pizzaSize];
-
                     // invoke the function to enable the button for checking out
-                    this.showCheckOutBtn();
+                    // this.showCheckOutBtn();
                 };
             };
         },
@@ -64,13 +61,19 @@ function pizzaCart() {
         removeFromCart(pizzaSize) {
             if (this.totals.overallTotal > 0) {
                 this.counter[pizzaSize]--;
-                this.totals[pizzaSize] = this.counter[pizzaSize] * this.price[pizzaSize];
-                // set the pizza totals into the overall totals
-                this.totals.overallTotal = this.totals[pizzaSize];
+                this.totals[pizzaSize] -= this.price[pizzaSize];
+
+                this.totals.overallTotal -= this.totals[pizzaSize];
 
                 // increment the stock
                 this.pizzaAvailable[pizzaSize]++;
             };
+        },
+
+        // totals for pizza
+        get total() {
+            this.totals.overallTotal = this.totals.small + this.totals.medium + this.totals.large
+            return this.totals.overallTotal;
         },
 
         // method to set the bought property given a pizza size to true
@@ -78,11 +81,10 @@ function pizzaCart() {
             this.buy[pizzaSize] = true;
         },
 
-        showCheckOutBtn() {
-            if (this.counter.small > 0 || this.counter.medium > 0 || this.counter.large > 0) {
+        get showCheckOutBtn() {
+            return (this.counter.small > 0 || this.counter.medium > 0 || this.counter.large > 0);
                 // set the checkout property to true
-                this.checkOut = true;
-            };
+                // this.checkOut = true;
         },
 
         payment(userPayment, pizzaSize) {

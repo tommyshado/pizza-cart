@@ -31,11 +31,11 @@
 
                         <!-------------------------------------------------------- Cart Section  ----------------------------------------------------------->
     
-                        <div>
+                        <div class="pizza">
 
                             <!-- small pizza elements -->
 
-                            <strong><label for="">Small Pizza</label></strong>
+                            <strong><label class="pizzaCartLabel" for="">Small Pizza</label></strong>
     
                             <!-- add to cart anchor element -->
                             <a @click="addToCart('small')" href="#"><img src="../public/add.png" alt="" width="30px"></a>
@@ -46,13 +46,13 @@
                             <a @click="removeFromCart('small')" href="#"><img src="../public/minus.png" alt="" width="30px"></a>
     
                             <!-- small pizza total element -->
-                            <strong><span x-text="totals.small"></span></strong>
+                            <strong><span x-text="(totals.small).toFixed(2)"></span></strong>
                         </div>
 
                         <!-- medium pizza elements -->
     
-                        <div>
-                            <strong><label for="">Medium Pizza</label></strong>
+                        <div class="pizza">
+                            <strong><label class="pizzaCartLabel" for="">Medium Pizza</label></strong>
     
                             <!-- add to cart anchor element -->
                             <a @click="addToCart('medium')" href="#"><img src="../public/add.png" alt="" width="30px"></a>
@@ -63,14 +63,14 @@
                             <a @click="removeFromCart('medium')" href="#"><img src="../public/minus.png" alt="" width="30px"></a>
     
                             <!-- medium pizza total element -->
-                            <strong><span x-text="totals.medium"></span></strong>
+                            <strong><span x-text="(totals.medium).toFixed(2)"></span></strong>
                         </div>
     
 
                         <!-- large medium -->
 
-                        <div>
-                            <strong><label for="">Large Pizza</label></strong>
+                        <div class="pizza">
+                            <strong><label class="pizzaCartLabel" for="">Large Pizza</label></strong>
     
                             <!-- add to cart anchor element -->
                             <a @click="addToCart('large')" href="#"><img src="../public/add.png" alt="" width="30px"></a>
@@ -81,22 +81,22 @@
                             <a @click="removeFromCart('large')" href="#"><img src="../public/minus.png" alt="" width="30px"></a>
     
                             <!-- large pizza element -->
-                            <strong><span x-text="totals.large"></span></strong>
+                            <strong><span x-text="(totals.large).toFixed(2)"></span></strong>
                         </div>
 
                         <!-- total element -->
     
-                        <div>
+                        <div class="pizza">
     
                             <!-- elements for the overall total for small, medium and large pizza -->
-                            <strong><label for="">Total</label></strong>
-                            <strong><span x-text="totals.overallTotal"></span></strong>
+                            <strong><label class="pizzaCartLabel" for="">Total</label></strong>
+                            <strong><span x-text="(total).toFixed(2)"></span></strong>
                         </div>
 
                         <!-- checkout button element -->
-                        <template>
-                            <strong><button x-show="checkOut" class="buttons">Checkout</button></strong>
-                        </template>
+                        <div>
+                            <strong><button x-show="showCheckOutBtn" class="buttons">Checkout</button></strong>
+                        </div>
 
 
                         <!-------------------------------------------------------- Menu Section  ----------------------------------------------------------->
