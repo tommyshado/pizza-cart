@@ -27,6 +27,9 @@
     
                 <div class="section">
                     <div x-data="pizzaCart">
+
+
+                        <!-------------------------------------------------------- Cart Section  ----------------------------------------------------------->
     
                         <div>
 
@@ -91,9 +94,12 @@
                         </div>
 
                         <!-- checkout button element -->
+                        <template>
+                            <strong><button x-show="checkOut" class="buttons">Checkout</button></strong>
+                        </template>
 
 
-
+                        <!-------------------------------------------------------- Menu Section  ----------------------------------------------------------->
     
                         <!-- this is a pizza container -->
             
@@ -112,7 +118,7 @@
                                 </div>
             
                                 <div>
-                                    <!-- <strong><label for="">Stock Available:<span x-text="pizzasInStock('medium')" ></span></label></strong> -->
+                                    <strong><label for="">Stock Available:<span x-text="pizzaAvailable.medium" ></span></label></strong>
                                 </div>
             
                                 <strong><button class="buttons" @click="pizzaBought('medium')">BUY</button></strong>
@@ -130,7 +136,7 @@
                                 </div>
             
                                 <div>
-                                    <!-- <strong><label for="">Stock Available:<span x-text="pizzasInStock('large')" ></span></label></strong> -->
+                                    <strong><label for="">Stock Available:<span x-text="pizzaAvailable.large" ></span></label></strong>
                                 </div>
             
                                 <strong><button class="buttons" @click="pizzaBought('large')">BUY</button></strong>
@@ -148,7 +154,7 @@
                                 </div>
             
                                 <div>
-                                    <!-- <strong><label for="">Stock Available:<span x-text="pizzasInStock('small')" ></span></label></strong> -->
+                                    <strong><label for="">Stock Available:<span x-text="pizzaAvailable.small" ></span></label></strong>
                                 </div>
             
                                 <strong><button class="buttons" @click="pizzaBought('small')">BUY</button></strong>
