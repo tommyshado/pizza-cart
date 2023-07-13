@@ -80,6 +80,9 @@ function pizzaCart() {
         // method to set the bought property given a pizza size to true
         pizzaBought(pizzaSize) {
             this.buy[pizzaSize] = true;
+
+            // increment the counter property for the first time
+            this.counter[pizzaSize]++;
         },
 
         get showCheckOutBtn() {
