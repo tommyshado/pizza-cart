@@ -4,7 +4,7 @@ I built the Pizza Cart application for Zandile. Since Zandile pizza business is 
 
 Note:
 
-To navigate into the shopping cart basket : click the shopping cart icon on top.
+To navigate into the shopping cart basket : click the shopping cart icon on top of the web page.
 
 You can find the application at: https://tommyshado.github.io/pizza-cart/layouts/index.html
 
