@@ -21,7 +21,7 @@ function pizzaCart() {
             large: 129,
         },
 
-        bought: {
+        buy: {
             small: false,
             medium: false,
             large: false,
@@ -38,11 +38,12 @@ function pizzaCart() {
         pay: {
             successful: "",
             "not-succesfull": "",
+            userChange: "",
         },
 
         // method to add a pizza to the cart
         addToCart(pizzaSize) {
-            if (this.bought[pizzaSize] === true) {
+            if (this.buy[pizzaSize] === true) {
                 if (this.pizzaAvailable[pizzaSize] > 0) {
                     // decrement the stock
                     this.pizzaAvailable[pizzaSize]--;
@@ -74,7 +75,7 @@ function pizzaCart() {
 
         // method to set the bought property given a pizza size to true
         pizzaBought(pizzaSize) {
-            this.bought[pizzaSize] = true;
+            this.buy[pizzaSize] = true;
         },
 
         showCheckOutBtn() {
@@ -84,27 +85,23 @@ function pizzaCart() {
             };
         },
 
-        payment(userPayment) {
+        payment(userPayment, pizzaSize) {
 
-            if 
-            (
-                userPayment === this.price.small || 
-                userPayment === this.price.medium || 
-                userPayment === this.price.large
-            ) 
-            {
-                // enough payment
-                this.pay.successful = "Enjoy your pizza.";
-            } else if 
-            (
-                userPayment < this.price.small || 
-                userPayment < this.price.medium || 
-                userPayment < this.price.large
-            )  
-            {
-                // not enough payment
-                this.pay["not-succesfull"] = "Sorry - that is not enough money!";
-            }
+            if (this.buy[pizzaSize] === true) {
+                if (userPayment === this.price[pizzaSize]) {
+                    // enough payment
+                    this.pay.successful = "Enjoy your pizza.";
+
+                } else if (userPayment < this.price[pizzaSize])  {
+                    // not enough payment
+                    this.pay["not-succesfull"] = "Sorry - that is not enough money!";
+
+                } else if (userPayment > this.price[pizzaSize]) {
+                    let pizzaChange = userPayment - this.price[pizzaSize];
+                    // set the change property with the variables
+                    this.pay.userChange = `Your change is ${pizzaChange}`;
+                };
+            };
         },
     };
 };
