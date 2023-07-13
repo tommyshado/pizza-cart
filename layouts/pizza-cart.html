@@ -95,7 +95,14 @@
 
                         <!-- checkout button element -->
                         <div>
-                            <strong><button x-show="showCheckOutBtn" class="buttons">Checkout</button></strong>
+                            <strong><button x-show="showCheckOutBtn" @click="showPayElement" class="buttons">Checkout</button></strong>
+
+                            <!-- element for the pay -->
+                            <div x-show="showElement">
+                                <div class="message" x-text="paymentFeedback"></div>
+                                <label for=""> Payment amount here:<input type="text" x-model="payment"></label>
+                                <strong><button @click="bill('small')" class="buttons">Pay</button></strong>
+                            </div>
                         </div>
 
 

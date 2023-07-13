@@ -34,13 +34,14 @@ function pizzaCart() {
         },
 
         // checkOut: false,
-
-        pay: {
-            successful: "",
-            "not-succesfull": "",
-            userChange: "",
-        },
-
+        
+        showElement: false,
+        
+        // payment properties
+        userChange: "",
+        payment: "",
+        paymentFeedback: "",
+        
         // method to add a pizza to the cart
         addToCart(pizzaSize) {
             if (this.buy[pizzaSize] === true) {
@@ -87,21 +88,25 @@ function pizzaCart() {
                 // this.checkOut = true;
         },
 
-        payment(userPayment, pizzaSize) {
+        showPayElement() {
+            this.showElement = true;
+        },
+
+        bill(pizzaSize) {
 
             if (this.buy[pizzaSize] === true) {
-                if (userPayment === this.price[pizzaSize]) {
+                if (this.payment === this.price[pizzaSize]) {
                     // enough payment
-                    this.pay.successful = "Enjoy your pizza.";
+                    this.paymentFeedback = "Enjoy your pizza.";
 
-                } else if (userPayment < this.price[pizzaSize])  {
+                } else if (this.payment < this.price[pizzaSize])  {
                     // not enough payment
-                    this.pay["not-succesfull"] = "Sorry - that is not enough money!";
+                    this.paymentFeedback = "Sorry - that is not enough money!";
 
-                } else if (userPayment > this.price[pizzaSize]) {
-                    let pizzaChange = userPayment - this.price[pizzaSize];
+                } else if (this.payment > this.price[pizzaSize]) {
+                    let pizzaChange = this.payment - this.price[pizzaSize];
                     // set the change property with the variables
-                    this.pay.userChange = `Your change is ${pizzaChange}`;
+                    this.userChange = `Your change is ${pizzaChange}`;
                 };
             };
         },
