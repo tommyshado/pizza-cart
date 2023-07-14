@@ -118,6 +118,26 @@ function pizzaCart() {
                 // set the change property with the variables
                 this.paymentFeedback = `Your change is ${pizzaChange}`;
             };
+
+            this.payment = "";
+
+            // reseting the totals to default
+            this.totals.small = 0.00;
+            this.totals.medium = 0.00;
+            this.totals.large = 0.00;
+            this.totals.overallTotal = 0.00;
+
+            // reseting the pizzas available to default
+            this.pizzaAvailable.small += this.counter.small;
+            this.pizzaAvailable.medium += this.counter.medium;
+            this.pizzaAvailable.large += this.counter.large;
+
+            // reseting the counters to default
+            this.counter.small = 0.00;
+            this.counter.medium = 0.00;
+            this.counter.large = 0.00;
+
+
         },
     };
 };
