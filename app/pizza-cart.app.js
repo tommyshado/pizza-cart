@@ -133,9 +133,9 @@ function pizzaCart() {
             this.pizzaAvailable.large += this.counter.large;
 
             // reseting the counters to default
-            this.counter.small = 0.00;
-            this.counter.medium = 0.00;
-            this.counter.large = 0.00;
+            // this.counter.small = 0.00;
+            // this.counter.medium = 0.00;
+            // this.counter.large = 0.00;
 
 
         },
