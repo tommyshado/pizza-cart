@@ -38,8 +38,11 @@ function pizzaCart() {
         showElement: false,
         
         // payment properties
-        userChange: "",
+
+        // payment I will get from the user
         payment: "",
+
+        // payment I will send to the user
         paymentFeedback: "",
         
         // method to add a pizza to the cart
@@ -90,7 +93,7 @@ function pizzaCart() {
             this.totals[pizzaSize] += this.price[pizzaSize];
         },
 
-        get showCheckOutBtn() {
+        get showCartAndBtn() {
             return (this.counter.small > 0 || this.counter.medium > 0 || this.counter.large > 0);
                 // set the checkout property to true
                 // this.checkOut = true;
@@ -100,22 +103,20 @@ function pizzaCart() {
             this.showElement = true;
         },
 
-        bill(pizzaSize) {
+        // function to send payment feedback to the user
+        sendPaymentFeedback() {
+            if (Number(this.payment) === this.totals.overallTotal) {
+                // enough payment
+                this.paymentFeedback = "Enjoy your pizza.";
 
-            if (this.buy[pizzaSize] === true) {
-                if (this.payment === this.price[pizzaSize]) {
-                    // enough payment
-                    this.paymentFeedback = "Enjoy your pizza.";
+            } else if (Number(this.payment) < this.totals.overallTotal)  {
+                // not enough payment
+                this.paymentFeedback = "Sorry - that is not enough money!";
 
-                } else if (this.payment < this.price[pizzaSize])  {
-                    // not enough payment
-                    this.paymentFeedback = "Sorry - that is not enough money!";
-
-                } else if (this.payment > this.price[pizzaSize]) {
-                    let pizzaChange = this.payment - this.price[pizzaSize];
-                    // set the change property with the variables
-                    this.userChange = `Your change is ${pizzaChange}`;
-                };
+            } else if (Number(this.payment) > this.total) {
+                const pizzaChange = Number(this.payment) - this.totals.overallTotal;
+                // set the change property with the variables
+                this.paymentFeedback = `Your change is ${pizzaChange}`;
             };
         },
     };
