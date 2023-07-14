@@ -6,6 +6,6 @@ Note:
 
 To navigate into the shopping cart basket : click the shopping cart icon on top of the web page.
 
-You can find the application at: https://tommyshado.github.io/pizza-cart/layouts/index.html
+You can find the application at: https://tommyshado.github.io/pizza-cart/layouts/pizza-cart.html
 
 You can also find the unit testing at: https://tommyshado.github.io/pizza-cart/unit-testing/index.test.html
