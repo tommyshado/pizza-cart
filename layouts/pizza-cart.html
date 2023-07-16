@@ -120,7 +120,7 @@
                         <div class="pizza_class medium-pizza">
                             
                             <h2>Medium Pizza</h2>
-                            <img src="../public/pizza.png" width="100">
+                            <img src="../public/pizza.png" width="200">
                             <h3>R89.00</h3>
         
                             <div>
@@ -132,13 +132,13 @@
                                 <strong><label for="">Stock Available:<span x-text="pizzaAvailable.medium" ></span></label></strong>
                             </div>
         
-                            <strong><button class="buttons" @click="pizzaBought('medium')">BUY</button></strong>
+                            <strong><button class="buttons" @click="addToCart('medium')">BUY</button></strong>
         
                         </div>
         
                         <div class="pizza_class large-pizza">
                             <h3>Large Pizza</h3>
-                            <img src="../public/pizza.png" width="200">
+                            <img src="../public/pizza.png" width="300">
                             <h3>R129.00</h3>
         
                             <div>
@@ -150,13 +150,13 @@
                                 <strong><label for="">Stock Available:<span x-text="pizzaAvailable.large" ></span></label></strong>
                             </div>
         
-                            <strong><button class="buttons" @click="pizzaBought('large')">BUY</button></strong>
+                            <strong><button class="buttons" @click="addToCart('large')">BUY</button></strong>
         
                         </div>
         
                         <div class="pizza_class small-pizza">
                             <h4>Small Pizza</h4>
-                            <img src="../public/pizza.png" width="250">
+                            <img src="../public/pizza.png" width="150">
                             <h3>R49.00</h3>
         
                             <div>
@@ -168,7 +168,7 @@
                                 <strong><label for="">Stock Available:<span x-text="pizzaAvailable.small" ></span></label></strong>
                             </div>
         
-                            <strong><button class="buttons" @click="pizzaBought('small')">BUY</button></strong>
+                            <strong><button class="buttons" @click="addToCart('small')">BUY</button></strong>
                     
                         </div>
                     </div>
